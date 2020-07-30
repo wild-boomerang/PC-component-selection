@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:Project"
+             x:Class="Project.Pages.ItemsPage">
+
+    <StackLayout>
+        <ListView x:Name="itemsList" 
+                  ItemsSource="{Binding}" 
+                  HasUnevenRows="True" 
+                  ItemTapped="ItemTabbedInList"
+                  x:FieldModifier="public">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Text="{Binding ModelName}"
+                               Detail="{Binding Price}"
+                               ImageSource="{Binding ImageSource}"
+                               TextColor="Red"
+                               DetailColor="Blue">
+                        <ImageCell.ContextActions>
+                            <MenuItem Text="{x:Static local:Resource.ItemsPageMenuItemSelect}" 
+                                      Clicked="MenuItemSelected" />
+                        </ImageCell.ContextActions>
+                    </ImageCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label x:Name="label" 
+               Text="{x:Static local:Resource.ItemsPageLabel}"
+               FontSize="Large"
+               IsVisible="False"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"/>
+    </StackLayout>
+
+
+
+
+
+    <!--<StackLayout>
+        <Label Text="List of some items" TextColor="Black" FontSize="Title" />
+        <ListView ItemsSource="{Binding}" HasUnevenRows="True" ItemTapped="ItemTabbedInList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Text="{Binding}"
+                               Detail=""
+                               ImageSource=""
+                               TextColor="Red"
+                               DetailColor="Blue"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>-->
+
+
+
+
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Array x:Key="data" Type="{x:Type x:String}" >
+                <x:String>fds</x:String>
+                <x:String>fds</x:String>
+                <x:String>fds</x:String>
+            </x:Array>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="С чего начнём?" 
+                   FontSize="Title" />
+            <ListView ItemsSource="{StaticResource Key=data}" 
+                      HasUnevenRows="True"
+                      SeparatorVisibility="Default" BackgroundColor="YellowGreen"/>
+        </StackLayout>
+    </ContentPage.Content>-->
+
+</ContentPage>

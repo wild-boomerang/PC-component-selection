@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Project.Pages.StartPage.IndependentChoicePage.Children.Description.RAMDescriptionPage"
+             Title="ОЗУ">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Добавить в корзину" Order="Secondary" Clicked="ToolBarItemClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+        <!--<Grid RowSpacing="0" ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <ScrollView Grid.Row="0" Grid.Column="0" Grid.RowSpan="8" Grid.ColumnSpan="2">
+                <StackLayout>
+                    <Label Text="{Binding ModelName}" 
+                           FontSize="Title" 
+                           Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" />
+                    <Label Text="{Binding Price, StringFormat='{0} р.'}" 
+                           FontSize="Title" 
+                           TextColor="OrangeRed"
+                           Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <TableView x:Name="tableView" Intent="Form" HasUnevenRows="True">
+                        <TableView.Root>
+                            <TableRoot>
+                                <TableSection Title="Технические характеристики" 
+                                              Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                                    <ViewCell>
+                                        <ViewCell.View>
+                                            <StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="Объём" 
+                                                           HorizontalOptions="Start"
+                                                           Grid.Row="3" Grid.Column="0" />
+                                                    <Label Text="{Binding Volume}" 
+                                                           HorizontalOptions="Start"
+                                                           Grid.Row="3" Grid.Column="1"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="Тип" 
+                                                           HorizontalOptions="Start"
+                                                           Grid.Row="4" Grid.Column="0"/>
+                                                    <Label Text="{Binding Type}" 
+                                                           HorizontalOptions="Start"
+                                                           Grid.Row="4" Grid.Column="1"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="Частота" 
+                                                           HorizontalOptions="Start"
+                                                           Grid.Row="5" Grid.Column="0"/>
+                                                    <Label Text="{Binding Frequency}" 
+                                                           HorizontalOptions="Start"
+                                                           Grid.Row="5" Grid.Column="1"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="PC-индекс" 
+                                                           HorizontalOptions="Start"
+                                                           Grid.Row="6" Grid.Column="0"/>
+                                                    <Label Text="{Binding PCIndex1}" 
+                                                           HorizontalOptions="Start"
+                                                           Grid.Row="6" Grid.Column="1"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="Тайминги" 
+                                                           HorizontalOptions="Start"
+                                                           Grid.Row="7" Grid.Column="0"/>
+                                                    <Label Text="{Binding Timings}" 
+                                                           HorizontalOptions="Start"
+                                                           Grid.Row="7" Grid.Column="1"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </ViewCell.View>
+                                    </ViewCell>
+                                </TableSection>
+                            </TableRoot>
+                        </TableView.Root>
+                    </TableView>
+                </StackLayout>
+            </ScrollView>
+        </Grid>-->
+
+
+
+        <ScrollView>
+            <StackLayout>
+                <Image Source="{Binding ImageSource}" HeightRequest="250" />
+                <Label Text="{Binding ModelName}" 
+                           FontSize="Title" 
+                            />
+                <Label Text="{Binding Price, StringFormat='{0} р.'}" 
+                           FontSize="Title" 
+                           TextColor="OrangeRed"
+                           />
+                <TableView x:Name="tableView" Intent="Form" HasUnevenRows="True">
+                    <TableView.Root>
+                        <TableRoot>
+                            <TableSection Title="Технические характеристики" 
+                                              >
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Объём" 
+                                                           HorizontalOptions="StartAndExpand"
+                                                           />
+                                                <Label Text="{Binding Volume}" 
+                                                           HorizontalOptions="CenterAndExpand"
+                                                           />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Тип" 
+                                                           HorizontalOptions="StartAndExpand"
+                                                           />
+                                                <Label Text="{Binding Type}" 
+                                                           HorizontalOptions="CenterAndExpand"
+                                                           />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Частота" 
+                                                           HorizontalOptions="StartAndExpand"
+                                                           />
+                                                <Label Text="{Binding Frequency}" 
+                                                           HorizontalOptions="CenterAndExpand"
+                                                           />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="PC-индекс" 
+                                                           HorizontalOptions="StartAndExpand"
+                                                           />
+                                                <Label Text="{Binding PCIndex1}" 
+                                                           HorizontalOptions="CenterAndExpand"
+                                                           />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Тайминги" 
+                                                           HorizontalOptions="StartAndExpand"
+                                                           />
+                                                <Label Text="{Binding Timings}" 
+                                                           HorizontalOptions="CenterAndExpand"
+                                                           />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView.Root>
+                </TableView>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

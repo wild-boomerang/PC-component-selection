@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Project.Pages.StartPage.IndependentChoicePage.Children.Ads"
+             Title="Объявления">
+    <!--<ContentPage.Content>
+        <StackLayout>
+            <Image Source="splash_logo" HeightRequest="250" Aspect="AspectFill" />
+            <Label Text="Item name" FontSize="Title" />
+            <Label Text="Price"
+                   FontSize="Title" 
+                   TextColor="OrangeRed" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Welcome to Ads!" 
+                       Grid.Row="0" 
+                       Grid.ColumnSpan="2" />
+                <Label Text="Welcome to Ads,jmhgfhfdgxcgvmbn!"
+                       HorizontalOptions="Center"
+                       Grid.Row="1" 
+                       Grid.Column="0" />
+                <Label Text="Welcome to Ads!"
+                       Grid.Row="1" 
+                       Grid.Column="1" />
+                <Label Text="Welcome to Ads!" 
+                       Grid.Row="2" 
+                       Grid.Column="0" />
+                <Label Text="Welcome to Ads!" 
+                       Grid.Row="2" 
+                       Grid.Column="1" />
+                <Label Text="Welcome to Ads!" 
+                       Grid.Row="3" 
+                       Grid.Column="0" />
+                <Label Text="Welcome to Ads!" 
+                       Grid.Row="3" 
+                       Grid.Column="1" />
+                <Label Text="Welcome to Ads!" 
+                       Grid.Row="4" 
+                       Grid.Column="0" />
+                <Label Text="Welcome to Ads!" 
+                       Grid.Row="4" 
+                       Grid.Column="1" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>-->
+</ContentPage>

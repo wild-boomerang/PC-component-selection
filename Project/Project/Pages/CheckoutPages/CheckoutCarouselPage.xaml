@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Project.Pages.CheckoutPages.CheckoutCarouselPage"
+             xmlns:views="clr-namespace:Project.Pages.CheckoutPages.Views">
+    <ContentPage>
+        <StackLayout>
+            <views:DeliveryAddressesPlugin SubmitEvent="UserInfoRequest" />
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage>
+        <StackLayout>
+            <views:PaymentMethodPlugin SubmitEvent="PaymentForward" CancelEvent="PaymentBack" />
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage BackgroundColor="LightGray" >
+        <!--<Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ListView x:Name="itemsList" 
+                      ItemsSource="{Binding}"
+                      ItemTapped="ItemTabbedInList"
+                      Grid.Row="0"
+                      VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding ModelName}"
+                                                   Detail="{Binding Price}"
+                                                   ImageSource="{Binding ImageSource}"
+                                                   TextColor="Red"
+                                                   DetailColor="Blue">
+                        </ImageCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <BoxView BackgroundColor="Black" Grid.Row="1" />
+            <BoxView BackgroundColor="ForestGreen" Grid.Row="2" />
+            <BoxView BackgroundColor="Black" Grid.Row="3" />
+            <BoxView BackgroundColor="ForestGreen" Grid.Row="4" />
+        </Grid>-->
+        
+        
+        <ScrollView>
+            <StackLayout>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="Проверьте Ваш заказ" FontAttributes="Bold" FontSize="Title" />
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Товары" FontSize="Body" FontAttributes="Bold" 
+                                   HorizontalTextAlignment="Start"/>
+                            <Button Text="Изменить" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Frame>
+                    <ScrollView>
+                        <StackLayout>
+                            <ListView x:Name="itemsList" 
+                                      ItemsSource="{Binding}" 
+                                      HasUnevenRows="True" 
+                                      x:FieldModifier="public"
+                                      ItemTapped="ItemTabbedInList" 
+                                      BackgroundColor="White" >
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ImageCell Text="{Binding ModelName}"
+                                                   Detail="{Binding Price}"
+                                                   ImageSource="{Binding ImageSource}"
+                                                   TextColor="Red"
+                                                   DetailColor="Blue">
+                                        </ImageCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            <!--<Label Text="sadf" />-->
+                        </StackLayout>
+                    </ScrollView>
+                </Frame>
+
+                <Frame>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="paymentMethodLbl" Text="{Binding}" FontAttributes="Bold" 
+                               HorizontalOptions="Start" />
+                        <Button Text="Изменить" HorizontalOptions="EndAndExpand" />
+                    </StackLayout>
+                </Frame>
+
+                <Frame>
+                    <StackLayout>
+                        <Label Text="Адрес" />
+                        <Label x:Name="addressLbl" Text="{Binding}" FontAttributes="Bold" />
+                        <Label Text="Получатель" />
+                        <Label x:Name="fullNameLbl" Text="{Binding}" FontAttributes="Bold" />
+                        <Label x:Name="emailLbl" Text="{Binding}" FontAttributes="Bold" />
+                        <Label x:Name="phoneNumberLbl" Text="{Binding}" FontAttributes="Bold" />
+                    </StackLayout>
+                </Frame>
+
+                <Frame>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="К оплате" HorizontalOptions="Start" />
+                        <Label x:Name="priceLbl" Text="{Binding}" FontAttributes="Bold"
+                           HorizontalOptions="EndAndExpand" />
+                    </StackLayout>
+                </Frame>
+
+                <StackLayout Orientation="Horizontal" BackgroundColor="LimeGreen">
+                    <Button Text="Назад" BackgroundColor="LimeGreen" TextColor="White" 
+                        Clicked="BackClicked"
+                        HorizontalOptions="Start" />
+                    <Button Text="Отправить заказ" 
+                        BackgroundColor="LimeGreen" TextColor="White"
+                        Clicked="SendOrder"
+                        HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+</CarouselPage>

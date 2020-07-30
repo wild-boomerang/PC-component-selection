@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              xmlns:local="clr-namespace:Project"
              xmlns:pages="clr-namespace:Project.Pages"
+             xmlns:start="clr-namespace:Project.Pages.StartPage"
              x:Class="Project.Pages.MasterPage"
              Title="Master page">
     
@@ -13,9 +14,12 @@
         <ListView x:Name="listView" x:FieldModifier="public">
             <ListView.ItemsSource>
                 <x:Array Type="{x:Type local:MasterPageItem}">
-                    <local:MasterPageItem Title="Start" TargetType="{x:Type pages:StartPage}" />
-                    <local:MasterPageItem Title="Settings" TargetType="{x:Type pages:Settings}" />
-                    <local:MasterPageItem Title="About" TargetType="{x:Type pages:About}" />
+                    <local:MasterPageItem Title="{x:Static local:Resource.MasterPageItemMainTitle}" 
+                                          TargetType="{x:Type start:StartPage}" />
+                    <local:MasterPageItem Title="{x:Static local:Resource.MasterPageItemSettingsTitle}" 
+                                          TargetType="{x:Type pages:Settings}" />
+                    <local:MasterPageItem Title="{x:Static local:Resource.MasterPageItemAboutTitle}" 
+                                          TargetType="{x:Type pages:About}" />
                 </x:Array>
             </ListView.ItemsSource>
             <ListView.ItemTemplate>

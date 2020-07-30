@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:Project;assembly=Project"
+             x:Class="Project.Pages.StartPage.StartPage"
+             Title="{x:Static local:Resource.StartPageTitle}">
+    <!--<ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>-->
+
+    <!--<Grid RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <Button x:Name="readyBtn" Text="Готовые сборки" Clicked="ReadyClicked"
+                Grid.Row="0" Grid.Column="0"/>
+        <Button x:Name="singleBtn" Text="Выбрать самому" 
+                Grid.Row="0" Grid.Column="1"/>
+        <Button x:Name="aboutBtn" Text="Как подбирать комплектующие" 
+                Grid.Row="1" Grid.Column="0"/>
+    </Grid>-->
+
+    <!--<ContentPage.Resources>
+        <ResourceDictionary> 
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="DarkTurquoise" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="{StaticResource Key=btnColor}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!--<TableView Intent="Form" HasUnevenRows="True" Grid.Row="0" Grid.Column="0" >
+                    <TableView.Root>
+                        <TableRoot>
+                            <TableSection Title="Персональные данные" > 
+                                <EntryCell Label="Логин:" Placeholder="Логин" />
+                                <SwitchCell Text="Сохранить" On="False" />
+                            </TableSection>
+                            <TableSection Title="Контакты">
+                                <EntryCell Label="Телефон:" Placeholder="Телефон" Keyboard="Telephone" />
+                                <EntryCell Label="Email:" Placeholder="email" />
+                            </TableSection>
+                            <TableSection Title="Пример ViewCell">
+                                <ViewCell>
+                                    <ViewCell.View >
+                                        <StackLayout>
+                                            <Label Text="Label of ViewCell" TextColor="Gray" />
+                                            <Switch IsToggled="True" 
+                                            Toggled="ToggledInSwitch" />
+                                            <Label x:Name="showLabel" Text="On" />
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView.Root>
+                </TableView>-->
+
+                <!--<Button x:Name="readyBtn" Text="готовые сборки" Clicked="ReadyClicked" 
+                        FontSize="{StaticResource Key=fontsize}" 
+                        BackgroundColor="{StaticResource Key=btncolor}"-->
+                
+                <!--<Label Text="{Binding [readyBtn], Source={x:Static ResourceLoader.Instance}}" />-->
+                <!--{local:Translate searchEntry}-->
+                <Entry Placeholder="{x:Static local:Resource.searchEntry}" 
+                       PlaceholderColor="Wheat"
+                       Grid.Row="0" 
+                       Grid.Column="0" />
+                <Button x:Name="readyBtn"
+                        Text="{x:Static local:Resource.readyBtn}" 
+                        Clicked="ReadyClicked" 
+                        FontSize="{StaticResource Key=fontSize}"
+                        HeightRequest="150"
+                        
+                        Grid.Row="1" 
+                        Grid.Column="0" />
+                <!--<ImageButton x:Name="imageBtn" Aspect="AspectFill" 
+                             Source="ready_assemblies.jpg"
+                             CornerRadius="20"
+                             
+                             Grid.Row="1" 
+                             Grid.Column="0" />-->
+
+                <Button x:Name="singleBtn" 
+                        Text="{x:Static local:Resource.singleBtn}" 
+                        Clicked="SingleClicked"
+                        FontSize="{StaticResource Key=fontSize}"
+                        Grid.Row="2" 
+                        Grid.Column="0"/>
+                <Button x:Name="aboutBtn" 
+                        Text="{x:Static local:Resource.aboutBtn}"  
+                        Clicked="HelpClicked"
+                        FontSize="{StaticResource Key=fontSize}"
+                        Grid.Row="3" 
+                        Grid.Column="0"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>    
+    
+</ContentPage>

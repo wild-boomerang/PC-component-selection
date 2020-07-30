@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:Project"
+             x:Class="Project.Pages.IndependentChoicePage"
+             Title="{x:Static local:Resource.IndepPageTitle}">
+
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Array x:Key="imageSource" Type="{x:Type x:String}" >
+                <x:String>cpu.jpg</x:String>
+                <x:String>ram.jpg</x:String>
+                <x:String>gpu.jpg</x:String>
+                <x:String>morherboard.jpg</x:String>
+                <x:String>hdd.jpg</x:String>
+                <x:String>case.jpg</x:String>
+                <x:String>powerSupply.jpg</x:String>
+            </x:Array>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{x:Static local:Resource.InCart}" Order="Secondary" Clicked="ToShopToolBarItemClicked" />
+        <ToolbarItem Text="{x:Static local:Resource.IndChPageClearToolBarItem}" 
+                     Order="Secondary" Clicked="ClearToolBarItemClicked" />
+        <!--<ToolbarItem Text="ToolBarItem2" Order="Primary" />-->
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="label" Text="{x:Static local:Resource.IndPageLabel}" TextColor="Black" FontSize="Title" />
+            <ListView x:Name="listView"  
+                      ItemsSource="{Binding}" 
+                      HasUnevenRows="True" 
+                      ItemTapped="ItemTabbedInList"
+                      IsPullToRefreshEnabled="True"
+                      RefreshControlColor="Green">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<ImageCell x:Name="listViewImageCell" 
+                                   Text="{Binding Name}"                               
+                                   Detail="{Binding SelectedItem}"
+                                   ImageSource="{Binding ImagePath}"
+                                   TextColor="Red"
+                                   DetailColor="Green">
+                            <ImageCell.ContextActions>
+                                <MenuItem Text="Clear" Clicked="ClearMenuItemClicked" />
+                            </ImageCell.ContextActions>
+                        </ImageCell>-->
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <CheckBox IsChecked="{Binding IsChecked}" IsEnabled="false" />
+                                <Image Source="{Binding ImagePath}" 
+                                       HeightRequest="40" />
+                                <StackLayout Orientation="Vertical">
+                                     <Label Text="{Binding Name}" TextColor="Blue" />
+                                    <Label Text="{Binding SelectedItem}" TextColor="Green" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+    </StackLayout>
+        <!--<StackLayout>
+            <Label Text="С чего начнём?" 
+                   FontSize="Title" />
+            <ListView ItemsSource="{StaticResource Key=data}" 
+                      HasUnevenRows="True"
+                      SeparatorVisibility="Default" />
+        </StackLayout>-->
+    </ContentPage.Content>
+
+</ContentPage>

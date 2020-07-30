@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
+using SQLite;
+
 namespace Project
 {
-    class Case : ComputerPart
+    [Table("Cases")]
+    public class Case : ComputerPart
     {
         private string type;
         private string material;
         private bool powerSupply;
-        private int numberOfThreads;
         private string motherboardFormFactor;
         private int maxVideoCardLength; // mm
         private int maxProcessorCoolerHeight; // mm
@@ -17,10 +19,14 @@ namespace Project
         private string powerSupplyLocation;
         private string liquidCoolingSupport;
 
+        public Case()
+        {
+            WhoIs = computerParts.CASE;
+        }
+
         public string Type { get => type; set => type = value; }
         public string Material { get => material; set => material = value; }
         public bool PowerSupply { get => powerSupply; set => powerSupply = value; }
-        public int NumberOfThreads { get => numberOfThreads; set => numberOfThreads = value; }
         public string MotherboardFormFactor { get => motherboardFormFactor; set => motherboardFormFactor = value; }
         public int MaxVideoCardLength { get => maxVideoCardLength; set => maxVideoCardLength = value; }
         public int MaxProcessorCoolerHeight { get => maxProcessorCoolerHeight; set => maxProcessorCoolerHeight = value; }

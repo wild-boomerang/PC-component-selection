@@ -10,6 +10,14 @@
             <Color x:Key="backgroundColor">#1668DA</Color>
             <Color x:Key="btnColor">#4568DA</Color>
             <x:Double x:Key="fontSize">22</x:Double>
+            <Style x:Key="btnStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="DarkTurquoise" />
+                <Setter Property="FontSize" Value="Default" />
+            </Style>
+            <Style x:Key="lblStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="DarkSlateBlue" />
+                <Setter Property="FontSize" Value="Default" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

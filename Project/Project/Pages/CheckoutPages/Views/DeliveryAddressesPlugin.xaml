@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Project.Pages.CheckoutPages.Views.DeliveryAddressesPlugin">
+  <ContentView.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Margin="10">
+                    <Label Text="Ваш населенный пункт" FontAttributes="Bold" />
+                    <Entry x:Name="address" Placeholder="Где вы проживаете" />
+
+                    <Label Text="Адрес доставки" FontAttributes="Bold" />
+                    <Entry x:Name="street" Placeholder="Улица" />
+                    <Entry x:Name="house" Placeholder="Дом" />
+                    <Entry x:Name="building" Placeholder="Корпус" Keyboard="Numeric" />
+                    <Entry x:Name="entrance" Placeholder="Подъезд" Keyboard="Numeric" />
+                    <Entry x:Name="floor" Placeholder="Этаж" Keyboard="Numeric" />
+                    <Entry x:Name="flat" Placeholder="Квартира" Keyboard="Numeric" />
+                    <Entry x:Name="comment" Placeholder="Комментарий к адресу" />
+
+                    <Label Text="Контактные данные" FontAttributes="Bold" />
+                    <Label Text="Номер телефона и e-mail используются для оповещений об изменениях статуса заказа" />
+                    <Entry x:Name="name" Placeholder="Имя" />
+                    <Entry x:Name="surname" Placeholder="Фамилия" />
+                    <Entry x:Name="email" Placeholder="E-mail" Keyboard="Email" />
+                    <Entry x:Name="phoneNumber" Placeholder="Телефон" Keyboard="Telephone" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" BackgroundColor="LimeGreen">
+                    <Button Text="Перейти к способу оплаты" Clicked="SubmitClicked" BackgroundColor="LimeGreen" 
+                            TextColor="White" CornerRadius="10" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Project.Pages.StartPage.IndependentChoicePage.Children.Description.VideocardDescriptionPage"
+             Title="Видеокарта">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Добавить в корзину" Order="Secondary" Clicked="ToolBarItemClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Image Source="{Binding ImageSource}" HeightRequest="250" />
+                <Label Text="{Binding ModelName}" FontSize="Title" />
+                <Label Text="{Binding Price, StringFormat='{0} р.'}" 
+                       FontSize="Title" 
+                       TextColor="OrangeRed" />
+                <TableView x:Name="tableView" Intent="Form" HasUnevenRows="True">
+                    <TableView.Root>
+                        <TableRoot>
+                            <TableSection Title="Общая информация">
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Дата выхода на рынок" 
+                                                   HorizontalOptions="StartAndExpand" />
+                                            <Label Text="{Binding MarketLaunchDate}" 
+                                                   HorizontalOptions="CenterAndExpand" />
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </TableSection>
+                            <TableSection Title="Технические характеристики">
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Производитель графического процессора" 
+                                                       HorizontalOptions="StartAndExpand" />
+                                                <Label Text="{Binding GPUManufacturer1}" 
+                                                       HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Частота процессора" 
+                                                       HorizontalOptions="StartAndExpand" />
+                                                <Label Text="{Binding GPUFrequency1}" 
+                                                       HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Объём видеопамяти" 
+                                                       HorizontalOptions="StartAndExpand" />
+                                                <Label Text="{Binding VideoMemoryCapacity}" 
+                                                       HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Тип видеопамяти" 
+                                                       HorizontalOptions="StartAndExpand" />
+                                                <Label Text="{Binding TypeOfVideoMemory}" 
+                                                       HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Частота памяти" 
+                                                       HorizontalOptions="StartAndExpand" />
+                                                <Label Text="{Binding MemoryFrequency}" 
+                                                       HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Ширина шины видеопамяти" 
+                                                       HorizontalOptions="StartAndExpand" />
+                                                <Label Text="{Binding VideoBus}" 
+                                                       HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Разъёмы питания" 
+                                                       HorizontalOptions="StartAndExpand" />
+                                                <Label Text="{Binding PowerConnectors}" 
+                                                       HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView.Root>
+                </TableView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

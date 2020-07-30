@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
+using SQLite;
+
 namespace Project
 {
-    class Motherboard : ComputerPart
+    [Table("Motherboards")]
+    public class Motherboard : ComputerPart
     {
         private string socket;
         private string processorManufacturer;
@@ -12,6 +15,11 @@ namespace Project
         private string memoryType;
         private string formFactor;
         private int memorySlots;
+
+        public Motherboard()
+        {
+            WhoIs = computerParts.MOTHERBOARD;
+        }
 
         public string Socket { get => socket; set => socket = value; }
         public string ProcessorManufacturer { get => processorManufacturer; set => processorManufacturer = value; }

@@ -2,15 +2,23 @@
 using System.Collections.Generic;
 using System.Text;
 
+using SQLite;
+
 namespace Project
 {
-    class RAM : ComputerPart
+    [Table("RAMs")]
+    public class RAM : ComputerPart
     {
         private string type;
         private int volume; // MB
         private double frequency; // GHz
         private string PCIndex;
         private string timings;
+
+        public RAM()
+        {
+            WhoIs = computerParts.RAM;
+        }
 
         public string Type { get => type; set => type = value; }
         public int Volume { get => volume; set => volume = value; }

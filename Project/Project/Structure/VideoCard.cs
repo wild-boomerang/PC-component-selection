@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
+using SQLite;
+
 namespace Project
 {
-    class VideoCard : ComputerPart
+    [Table("Videocards")]
+    public class VideoCard : ComputerPart
     {
         private string GPUManufacturer;
         private string typeOfVideoMemory;
@@ -13,6 +16,11 @@ namespace Project
         private double GPUFrequency; // GHz
         private double memoryFrequency; // GHz
         private string powerConnectors;
+
+        public VideoCard()
+        {
+            WhoIs = computerParts.VIDEOCARD;
+        }
 
         public string GPUManufacturer1 { get => GPUManufacturer; set => GPUManufacturer = value; }
         public string TypeOfVideoMemory { get => typeOfVideoMemory; set => typeOfVideoMemory = value; }

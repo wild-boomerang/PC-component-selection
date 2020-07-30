@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
+using SQLite;
+
 namespace Project
 {
-    class PowerSupply : ComputerPart
+    [Table("PowerSupplies")]
+    public class PowerSupply : ComputerPart
     {
         private int power; // W
         private string certificate_80_PLUS;
@@ -13,6 +16,11 @@ namespace Project
         private int maximumLineCurrent_12V; // A
         private bool modularPowerCableConnection;
         private int fanSize; // mm
+
+        public PowerSupply()
+        {
+            WhoIs = computerParts.POWERSUPPLY;
+        }
 
         public int Power { get => power; set => power = value; }
         public string Certificate_80_PLUS { get => certificate_80_PLUS; set => certificate_80_PLUS = value; }

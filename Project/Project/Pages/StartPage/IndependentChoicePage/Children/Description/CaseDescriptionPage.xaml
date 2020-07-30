@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Project.Pages.StartPage.IndependentChoicePage.Children.Description.CaseDescriptionPage"
+             Title="Корпус">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Добавить в корзину" Order="Secondary" Clicked="ToolBarItemClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Array x:Key="description" Type="{x:Type x:String}">
+                <x:String>Компьютерные корпуса позволяют собирать систему из стандартных компонентов, но по своей конструкции и наличию тех или иных функций делятся на различные типы. Наиболее распространенными являются корпуса типа «башня» (Tower), которые делятся обычно на 3 размера: большая (Full), средняя (Midi) и маленькая (Mini). Серверные корпуса предназначены для создания серверов и рабочих станций. Они могут быть напольными по типу «башни», но могут и монтироваться в стойку. Корпуса для одноплатных компьютеров обычно не подразумевают наличие охлаждения для внутренних компонентов и предназначены для устройств вида Raspberry PI и пр. Производители корпусов вида «Открытый корпус» делают в них акцент открытости компонентов ПК или изменении конструкции корпуса.</x:String>
+            </x:Array>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <!--<CheckBox x:Name="checkBox" IsChecked="True" Visual="Material" />-->
+                <Image Source="{Binding ImageSource}" HeightRequest="250" />
+                <Label Text="{Binding ModelName}" FontSize="Title" />
+                <Label Text="{Binding Price, StringFormat='{0} р.'}" 
+                       FontSize="Title" 
+                       TextColor="OrangeRed" />
+                <TableView x:Name="tableView" Intent="Form" HasUnevenRows="True">
+                    <TableView.Root>
+                        <TableRoot>
+                            <TableSection Title="Общая информация">
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="30" />
+                                            </Grid.ColumnDefinitions>
+                                            
+                                            <Label Text="Тип корпуса" 
+                                                    HorizontalOptions="Start"
+                                                    Grid.Row="0"
+                                                    Grid.Column="0" />
+                                            <Label Text="{Binding Type}" 
+                                                    HorizontalOptions="Start"
+                                                    Grid.Row="0"
+                                                    Grid.Column="1"/>
+                                            <Button x:Name="btn" Text="?"
+                                                    Clicked="HeplBtnClicked"
+                                                    HeightRequest="25"
+                                                    FontSize="Micro"
+                                                    Grid.Row="0"
+                                                    Grid.Column="2"/>
+                                            
+                                            <Label Text="Блок питания" 
+                                                    HorizontalOptions="Start"
+                                                    Grid.Row="1"
+                                                    Grid.Column="0"/>
+                                            <Label Text="{Binding PowerSupply}" 
+                                                    HorizontalOptions="Start"
+                                                    Grid.Row="1"
+                                                    Grid.Column="1" />
+                                            <Button Text="?"
+                                                    Clicked="HeplBtnClicked"
+                                                    HeightRequest="20"
+                                                    FontSize="Micro"
+                                                    Grid.Row="1"
+                                                    Grid.Column="2"/>
+                                        </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </TableSection>
+                            <TableSection Title="Технические характеристики">
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition />
+                                                <RowDefinition />
+                                                <RowDefinition />
+                                                <RowDefinition />
+                                                <RowDefinition />
+                                                <RowDefinition />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="30" />
+                                            </Grid.ColumnDefinitions>
+                                            
+                                            <Label Text="Материал корпуса" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="0"
+                                                   Grid.Column="0" />
+                                            <Label Text="{Binding Material}" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="0"
+                                                   Grid.Column="1" />
+                                            <Button Text="?"
+                                                    Clicked="HeplBtnClicked"
+                                                    HeightRequest="30"
+                                                    FontSize="Micro"
+                                                    Grid.Row="0"
+                                                    Grid.Column="2"/>
+                                            
+                                            <Label Text="Форм-фактор материнской платы" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="1"
+                                                   Grid.Column="0" />
+                                            <Label Text="{Binding MotherboardFormFactor}" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="1"
+                                                   Grid.Column="1"/>
+                                            <Button Text="?"
+                                                    Clicked="HeplBtnClicked"
+                                                    HeightRequest="30"
+                                                    FontSize="Micro"
+                                                    Grid.Row="1"
+                                                    Grid.Column="2"/>
+                                            
+                                            <Label Text="Поддержка жидкостного охлаждения" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="2"
+                                                   Grid.Column="0" />
+                                            <Label Text="{Binding LiquidCoolingSupport}" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="2"
+                                                   Grid.Column="1"/>
+                                            <Button Text="?"
+                                                    Clicked="HeplBtnClicked"
+                                                    HeightRequest="30"
+                                                    FontSize="Micro"
+                                                    Grid.Row="2"
+                                                    Grid.Column="2"/>
+                                            
+                                            <Label Text="Прозрачное окно" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="3"
+                                                   Grid.Column="0"/>
+                                            <Label Text="{Binding TransparentWindow}" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="3"
+                                                   Grid.Column="1" />
+                                            <Button Text="?"
+                                                    Clicked="HeplBtnClicked"
+                                                    HeightRequest="30"
+                                                    FontSize="Micro"
+                                                    Grid.Row="3"
+                                                    Grid.Column="2"/>
+                                            
+                                            <Label Text="Макс. длина видеокарты"                                                    
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="4"
+                                                   Grid.Column="0"/>
+                                            <Label Text="{Binding MaxVideoCardLength}" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="4"
+                                                   Grid.Column="1"/>
+                                            <Button Text="?"
+                                                    Clicked="HeplBtnClicked"
+                                                    Grid.Row="4"
+                                                    Grid.Column="2"/>
+                                            
+                                            <Label Text="Макс. высота процессорного кулера" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="5"
+                                                   Grid.Column="0"
+                                                   Padding="0" />
+                                            <Label Text="{Binding MaxProcessorCoolerHeight}" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="5"
+                                                   Grid.Column="1" />
+                                            <Button Text="?"
+                                                    Clicked="HeplBtnClicked"
+                                                    Grid.Row="5"
+                                                    Grid.Column="2"/>
+                                        </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </TableSection>
+                            <TableSection Title="Габариты">
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition />
+                                                <RowDefinition />
+                                                <RowDefinition />
+                                                <RowDefinition />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="30" />
+                                            </Grid.ColumnDefinitions>
+                                            
+                                            <Label Text="Высота" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="0"
+                                                   Grid.Column="0"/>
+                                            <Label Text="{Binding Height}" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="0"
+                                                   Grid.Column="1"/>
+                                            <Button Text="?"
+                                                    Clicked="HeplBtnClicked"
+                                                    Grid.Row="0"
+                                                    Grid.Column="2"/>
+
+                                            <Label Text="Ширина" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="1"
+                                                   Grid.Column="0" />
+                                            <Label Text="{Binding Width}" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="1"
+                                                   Grid.Column="1"/>
+                                            <Button Text="?"
+                                                    Clicked="HeplBtnClicked"
+                                                    Grid.Row="1"
+                                                    Grid.Column="2"/>
+
+                                            <Label Text="Глубина" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="2"
+                                                   Grid.Column="0" />
+                                            <Label Text="{Binding Depth}" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="2"
+                                                   Grid.Column="1"/>
+                                            <Button Text="?"
+                                                    Clicked="HeplBtnClicked"
+                                                    Grid.Row="2"
+                                                    Grid.Column="2"/>
+                   
+                                            <Label Text="Вес" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="3"
+                                                   Grid.Column="0"/>
+                                            <Label Text="{Binding Weight}" 
+                                                   HorizontalOptions="Start"
+                                                   Grid.Row="3"
+                                                   Grid.Column="1"/>
+                                            <Button Text="?"
+                                                    Clicked="HeplBtnClicked"
+                                                    Grid.Row="3"
+                                                    Grid.Column="2"/>
+                                        </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView.Root>
+                </TableView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

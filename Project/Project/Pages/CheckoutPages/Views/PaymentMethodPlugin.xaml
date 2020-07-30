@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Project.Pages.CheckoutPages.Views.PaymentMethodPlugin">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <x:Array x:Key="paymentMethod" Type="{x:Type x:String}">
+                <x:String>Картой online</x:String>
+                <x:String>Картой при получении</x:String>
+                <x:String>Наличными при получении</x:String>
+            </x:Array>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout>
+            <ListView x:Name="choiceList" ItemsSource="{StaticResource Key=paymentMethod}" />
+            <StackLayout Orientation="Horizontal" BackgroundColor="LimeGreen" >
+                <Button Text="Назад" BackgroundColor="LimeGreen" TextColor="White" 
+                        Clicked="BackClicked"
+                        HorizontalOptions="Start" />
+                <Button Text="Перейти к подтверждению заказа" 
+                        BackgroundColor="LimeGreen" TextColor="White"
+                        Clicked="ForwardClicked"
+                        HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

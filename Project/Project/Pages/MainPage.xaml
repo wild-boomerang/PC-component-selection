@@ -4,6 +4,7 @@
                   xmlns:d="http://xamarin.com/schemas/2014/forms/design"
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:local="clr-namespace:Project.Pages"
+                  xmlns:local2="clr-namespace:Project.Pages.StartPage"
                   mc:Ignorable="d"
                   x:Class="Project.MainPage"
                   MasterBehavior="Popover">
@@ -15,7 +16,7 @@
     <MasterDetailPage.Detail>
         <NavigationPage>
             <x:Arguments>
-                <local:StartPage />
+                <local2:StartPage />
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

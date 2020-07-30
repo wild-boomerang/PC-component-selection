@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Project.Pages.StartPage.IndependentChoicePage.Children.Description.MotherboardDescriptionPage"
+             Title="Мат. плата">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Добавить в корзину" Order="Secondary" Clicked="ToolBarItemClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Image Source="{Binding ImageSource}" HeightRequest="250" />
+                <Label Text="{Binding ModelName}" FontSize="Title" />
+                <Label Text="{Binding Price, StringFormat='{0} р.'}" 
+                       FontSize="Title" 
+                       TextColor="OrangeRed" />
+                <TableView x:Name="tableView" Intent="Form" HasUnevenRows="True">
+                    <TableView.Root>
+                        <TableRoot>
+                            <TableSection Title="Общая информация">
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Дата выхода на рынок" 
+                                                   HorizontalOptions="StartAndExpand" />
+                                            <Label Text="{Binding MarketLaunchDate}" 
+                                                   HorizontalOptions="CenterAndExpand" />
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </TableSection>
+                            <TableSection Title="Технические характеристики">
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Поддержка процессоров" 
+                                                       HorizontalOptions="StartAndExpand" />
+                                                <Label Text="{Binding ProcessorManufacturer}" 
+                                                       HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Сокет" 
+                                                       HorizontalOptions="StartAndExpand" />
+                                                <Label Text="{Binding Socket}" 
+                                                       HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Чипсет" 
+                                                       HorizontalOptions="StartAndExpand" />
+                                                <Label Text="{Binding Chipset}" 
+                                                       HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Форм-фактор" 
+                                                       HorizontalOptions="StartAndExpand" />
+                                                <Label Text="{Binding FormFactor}" 
+                                                       HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </TableSection>
+                            <TableSection Title="Память">
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Тип памяти" 
+                                                       HorizontalOptions="StartAndExpand" />
+                                                <Label Text="{Binding MemoryType}" 
+                                                       HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Количество слотов памяти" 
+                                                       HorizontalOptions="StartAndExpand" />
+                                                <Label Text="{Binding MemorySlots}" 
+                                                       HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>                                            
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView.Root>
+                </TableView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

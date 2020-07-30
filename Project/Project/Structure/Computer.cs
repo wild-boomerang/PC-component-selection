@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Project
 {
-    class Computer
+    public class Computer
     {
         private double price;
         private double weight;
@@ -15,6 +15,7 @@ namespace Project
         private HDD hdd;
         private PowerSupply powerSupply;
         private Case computerCase;
+        private string imageSource;
 
         public double Price { get => price; set => price = value; }
         public double Weight { get => weight; set => weight = value; }
@@ -25,6 +26,7 @@ namespace Project
         internal HDD Hdd { get => hdd; set => hdd = value; }
         internal PowerSupply PowerSupply { get => powerSupply; set => powerSupply = value; }
         internal Case ComputerCase { get => computerCase; set => computerCase = value; }
+        public string ImageSource { get => imageSource; set => imageSource = value; }
 
         //public IEnumerator GetEnumerator()
         //{

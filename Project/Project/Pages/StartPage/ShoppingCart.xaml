@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:Project"
+             x:Class="Project.Pages.StartPage.ShoppingCart"
+             Title="Корзина">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Завершить покупки" Order="Secondary" Clicked="FinishToolBarItemClicked" />
+        <ToolbarItem Text="Очистить корзину" Order="Secondary" Clicked="ClearToolBarItemClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="itemsList" 
+                      ItemsSource="{Binding}" 
+                      HasUnevenRows="True" 
+                      x:FieldModifier="public"
+                      ItemTapped="ItemTabbedInList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding ModelName}"
+                               Detail="{Binding Price}"
+                               ImageSource="{Binding ImageSource}"
+                               TextColor="Red"
+                               DetailColor="Blue">
+                        </ImageCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label x:Name="forEmptyLabel"
+                   Text="{x:Static local:Resource.ShoppingCartPageEmptyLabel}"
+                   FontSize="Large"
+                   IsVisible="False"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" />
+            <Label x:Name="fullPricelabel" 
+                   Text="label" 
+                   FontSize="Title"
+                   TextColor="DarkRed"
+                   VerticalOptions="Fill" 
+                   HorizontalOptions="End" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

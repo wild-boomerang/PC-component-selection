@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Project.Pages.StartPage"
+             Title="Start page">
+    <!--<ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>-->
+
+    <!--<Grid RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <Button x:Name="readyBtn" Text="Готовые сборки" Clicked="ReadyClicked"
+                Grid.Row="0" Grid.Column="0"/>
+        <Button x:Name="singleBtn" Text="Выбрать самому" 
+                Grid.Row="0" Grid.Column="1"/>
+        <Button x:Name="aboutBtn" Text="Как подбирать комплектующие" 
+                Grid.Row="1" Grid.Column="0"/>
+    </Grid>-->
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="{StaticResource Key=btnColor}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!--<Button x:Name="readyBtn" Text="Готовые сборки" Clicked="ReadyClicked" 
+                    FontSize="{StaticResource Key=fontSize}" BackgroundColor="{StaticResource Key=btnColor}"-->
+                <Button x:Name="readyBtn" Text="Готовые сборки" Clicked="ReadyClicked" 
+                    FontSize="{StaticResource Key=fontSize}" Grid.Row="0" Grid.Column="0"/>
+                <Button x:Name="singleBtn" Text="Выбрать самому" Clicked="SingleClicked" 
+                Grid.Row="1" Grid.Column="0"/>
+                <Button x:Name="aboutBtn" Text="Как подбирать комплектующие"  Clicked="HelpClicked"
+                Grid.Row="2" Grid.Column="0"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

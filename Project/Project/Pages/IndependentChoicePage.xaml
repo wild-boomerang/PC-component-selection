@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Project.Pages.IndependentChoicePage"
+             Title="Independent choice">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{StaticResource btnColor}">
+            <Label Text="С чего начнём?" FontSize="Large" HorizontalOptions="Center" />
+
+            <Button x:Name="readyBtn" Text="с процессора!"
+                            Grid.Row="0" Grid.Column="0"/>
+            <Button x:Name="singleBtn" Text="с материнской платы" 
+                            Grid.Row="1" Grid.Column="0"/>
+            <Button x:Name="aboutBtn" Text="с видеокарты" 
+                            Grid.Row="2" Grid.Column="0"/>
+            <Button x:Name="sdf" Text="с оперативы"
+                            Grid.Row="3" Grid.Column="0"/>
+
+            <Button x:Name="cvx" Text="с жёсткого диска??" 
+                            Grid.Row="4" Grid.Column="0"/>
+            <Button x:Name="z" Text="с корпуса"  
+                            Grid.Row="5" Grid.Column="0"/>
+            <Button x:Name="h" Text="с блока питания" 
+                            Grid.Row="6" Grid.Column="0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
